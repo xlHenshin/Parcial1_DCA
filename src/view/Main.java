@@ -31,7 +31,7 @@ public class Main extends PApplet {
 		for (int i = 0; i < controller.dog().size(); i++) {
 
 			textSize(13);
-			controller.dog().get(i).drawData(23+(180*i),300);
+			controller.dog().get(i).drawData(23+(185*i),300);
 		}
 		
 	}
@@ -41,11 +41,11 @@ public class Main extends PApplet {
 		textSize(20);
 		text("Fundación Peludos Sin Hogar", 25, 50);
 		text("Para organizar la información, presione las teclas indicadas:", 25, 50+40);
-		text("I = ID", 25, 100+20);
-		text("N = Nombre", 25, 100+40);
+		text("Q = ID", 25, 100+20);
+		text("W = Nombre", 25, 100+40);
 		text("E = Edad", 25, 100+60);
 		text("R = Raza", 25, 100+80);
-		text("F = Fecha de Nacimiento", 25, 100+100);
+		text("T = Fecha de Nacimiento", 25, 100+100);
 		
 	}
 	

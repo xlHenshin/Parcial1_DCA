@@ -22,6 +22,8 @@ public class Logic {
 	private String[] textTwo;
 	private LinkedList<Dog> dog;
 	
+	private String[] saveId, saveName, saveAge, saveRace, saveDate;
+	
 	public Logic(PApplet app) {
 		
 		this.app = app;
@@ -33,6 +35,12 @@ public class Logic {
 		sortAge = new SortAge();
 		sortRace = new SortRace();
 		sortDate = new SortDate();
+		
+		saveId = new String[10];
+		saveName = new String[10];
+		saveAge = new String[10];
+		saveRace = new String[10];
+		saveDate = new String[10];
 	
 		for (int i = 0; i < textOne.length; i++) {
 			
@@ -72,29 +80,135 @@ public class Logic {
 	public void sortList(char key) {
 		
 		switch (key) {
-		case 'i':
+		case 'q':
 			
 			Collections.sort(dog);
+			
+			for (int i = 0; i < dog.size(); i++) {
+
+				String id = Integer.toString(dog.get(i).getId());
+				String nombre = dog.get(i).getNombre();
+				String edad = Integer.toString(dog.get(i).getEdad());
+				String raza = dog.get(i).getRaza();
+				
+				Date fecha = dog.get(i).getNacimiento();
+				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+				String fecha2 = formato.format(fecha);
+				
+				String line = id + "," + nombre + "," + edad + "," + raza + "," + fecha2;
+
+				saveId[i] = line;
+				
+				String prueba = saveId[i];
+				System.out.println(prueba);
+				
+				app.saveStrings("OrganizadoPorId.txt", saveId);
+			}
+			
 			break;
 
-		case 'n':
+		case 'w':
 			
 			Collections.sort(dog, sortName);
+			
+			for (int i = 0; i < dog.size(); i++) {
+
+				String id = Integer.toString(dog.get(i).getId());
+				String nombre = dog.get(i).getNombre();
+				String edad = Integer.toString(dog.get(i).getEdad());
+				String raza = dog.get(i).getRaza();
+				
+				Date fecha = dog.get(i).getNacimiento();
+				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+				String fecha2 = formato.format(fecha);
+				
+				String line = id + "," + nombre + "," + edad + "," + raza + "," + fecha2;
+
+				saveName[i] = line;
+				
+				String prueba = saveName[i];
+				System.out.println(prueba);
+
+				app.saveStrings("OrganizadoPorNombre.txt", saveName);
+			}
 			break;
 			
 		case 'e':
 			
 			Collections.sort(dog, sortAge);
+			
+			for (int i = 0; i < dog.size(); i++) {
+
+				String id = Integer.toString(dog.get(i).getId());
+				String nombre = dog.get(i).getNombre();
+				String edad = Integer.toString(dog.get(i).getEdad());
+				String raza = dog.get(i).getRaza();
+				
+				Date fecha = dog.get(i).getNacimiento();
+				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+				String fecha2 = formato.format(fecha);
+				
+				String line = id + "," + nombre + "," + edad + "," + raza + "," + fecha2;
+
+				saveAge[i] = line;
+				
+				String prueba = saveAge[i];
+				System.out.println(prueba);
+
+				app.saveStrings("OrganizadoPorEdad.txt", saveAge);
+			}
 			break;
 		
 		case 'r':
 			
 			Collections.sort(dog, sortRace);
+			
+			for (int i = 0; i < dog.size(); i++) {
+
+				String id = Integer.toString(dog.get(i).getId());
+				String nombre = dog.get(i).getNombre();
+				String edad = Integer.toString(dog.get(i).getEdad());
+				String raza = dog.get(i).getRaza();
+				
+				Date fecha = dog.get(i).getNacimiento();
+				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+				String fecha2 = formato.format(fecha);
+				
+				String line = id + "," + nombre + "," + edad + "," + raza + "," + fecha2;
+
+				saveRace[i] = line;
+				
+				String prueba = saveRace[i];
+				System.out.println(prueba);
+
+				app.saveStrings("OrganizadoPorRaza.txt", saveRace);
+			}
 			break;
 		
-		case 'f':
+		case 't':
 			
 			Collections.sort(dog, sortDate);
+			
+			for (int i = 0; i < dog.size(); i++) {
+
+				String id = Integer.toString(dog.get(i).getId());
+				String nombre = dog.get(i).getNombre();
+				String edad = Integer.toString(dog.get(i).getEdad());
+				String raza = dog.get(i).getRaza();
+				
+				Date fecha = dog.get(i).getNacimiento();
+				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+				String fecha2 = formato.format(fecha);
+				
+				String line = id + "," + nombre + "," + edad + "," + raza + "," + fecha2;
+
+				saveDate[i] = line;
+				
+				String prueba = saveDate[i];
+				System.out.println(prueba);
+
+				app.saveStrings("OrganizadoPorFechaNacimiento.txt", saveDate);
+			}
 			break;
 		default:
 			break;

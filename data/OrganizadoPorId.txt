@@ -1,0 +1,10 @@
+1,Cancerbero,12,Pastor australiano,25-04-2002
+2,Mateo,5,Gran Danes,12-05-2014
+3,Floppi,20,Doberman,25-02-1999
+4,Anibal,6,Lobero irlandes,10-07-2013
+5,Doggy,2,Labrador,10-11-2017
+6,White,9,Pitbull,01-12-2010
+7,Gasper,15,Beagle,10-10-2014
+8,Pegaso,5,Bulldog frances,06-01-2014
+9,Zorro,1,Borzoi,20-06-2018
+10,Firulais,8,Galgo,21-02-2011

@@ -14,6 +14,7 @@ public class Dog implements Comparable<Dog> {
 	private int id, edad;
 	private String nombre, raza;
 	private Date nacimiento;
+	private String fecha;
 	
 	public Dog(PApplet app, int id, String nombre, int edad, String raza, Date nacimiento) {
 		
@@ -23,13 +24,13 @@ public class Dog implements Comparable<Dog> {
 		this.edad=edad;
 		this.raza=raza;
 		this.nacimiento=nacimiento;
+		
+		SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+		fecha = formato.format(nacimiento);
 	}
 	
 	public void drawData(int x, int y) {
-		
-		SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-		String fecha = formato.format(nacimiento);
-		
+
 		app.text("Id:" + id, x, y);
 		app.text("Nombre:" + nombre, x, y + 20);
 		app.text("Edad:" + edad, x, y + 40);
@@ -76,6 +77,16 @@ public class Dog implements Comparable<Dog> {
 
 	public void setNacimiento(Date nacimiento) {
 		this.nacimiento = nacimiento;
+	}
+	
+	
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
 	@Override
