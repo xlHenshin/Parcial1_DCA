@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Dog {
+public class Dog implements Comparable<Dog> {
 
 	private PApplet app;
 	
@@ -19,8 +19,14 @@ public class Dog {
 		this.nacimiento=nacimiento;
 	}
 	
-	public void drawData() {
+	public void drawData(int x) {
 		
+		app.text("Id:" + id, x + 8, 125);
+		app.text("Name:" + nombre, x + 8, 125 + 19);
+		app.text("Age:" + edad, x + 8, 125 + 19 * 2);
+		app.text("Race:" + raza, x + 8, 125 + 19 * 3);
+		app.text("Date:" + nacimiento, x + 8, 125 + 19 * 4);
+
 	}
 
 	public int getId() {
@@ -61,6 +67,12 @@ public class Dog {
 
 	public void setNacimiento(String nacimiento) {
 		this.nacimiento = nacimiento;
+	}
+
+	@Override
+	public int compareTo(Dog arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
