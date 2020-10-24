@@ -93,9 +93,9 @@ public class Logic {
 			for (int i = 0; i < dog.size(); i++) {
 
 				String id = Integer.toString(dog.get(i).getId());
-				String nombre = dog.get(i).getNombre();
+				String nombre = dog.get(i).getNombre().toLowerCase();
 				String edad = Integer.toString(dog.get(i).getEdad());
-				String raza = dog.get(i).getRaza();
+				String raza = dog.get(i).getRaza().toLowerCase();
 				
 				//Al igual que en el for de arriba, acá se debe hacer lo mismo con los formatos para poder tener
 				//un correcto resutado a la hora de guardar el arreglo en el txt.
@@ -124,9 +124,9 @@ public class Logic {
 			for (int i = 0; i < dog.size(); i++) {
 
 				String id = Integer.toString(dog.get(i).getId());
-				String nombre = dog.get(i).getNombre();
+				String nombre = dog.get(i).getNombre().toLowerCase();
 				String edad = Integer.toString(dog.get(i).getEdad());
-				String raza = dog.get(i).getRaza();
+				String raza = dog.get(i).getRaza().toLowerCase();
 				
 				Date fecha = dog.get(i).getNacimiento();
 				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -151,9 +151,9 @@ public class Logic {
 			for (int i = 0; i < dog.size(); i++) {
 
 				String id = Integer.toString(dog.get(i).getId());
-				String nombre = dog.get(i).getNombre();
+				String nombre = dog.get(i).getNombre().toLowerCase();
 				String edad = Integer.toString(dog.get(i).getEdad());
-				String raza = dog.get(i).getRaza();
+				String raza = dog.get(i).getRaza().toLowerCase();
 				
 				Date fecha = dog.get(i).getNacimiento();
 				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -178,9 +178,9 @@ public class Logic {
 			for (int i = 0; i < dog.size(); i++) {
 
 				String id = Integer.toString(dog.get(i).getId());
-				String nombre = dog.get(i).getNombre();
+				String nombre = dog.get(i).getNombre().toLowerCase();
 				String edad = Integer.toString(dog.get(i).getEdad());
-				String raza = dog.get(i).getRaza();
+				String raza = dog.get(i).getRaza().toLowerCase();
 				
 				Date fecha = dog.get(i).getNacimiento();
 				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -205,9 +205,9 @@ public class Logic {
 			for (int i = 0; i < dog.size(); i++) {
 
 				String id = Integer.toString(dog.get(i).getId());
-				String nombre = dog.get(i).getNombre();
+				String nombre = dog.get(i).getNombre().toLowerCase();
 				String edad = Integer.toString(dog.get(i).getEdad());
-				String raza = dog.get(i).getRaza();
+				String raza = dog.get(i).getRaza().toLowerCase();
 				
 				Date fecha = dog.get(i).getNacimiento();
 				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
