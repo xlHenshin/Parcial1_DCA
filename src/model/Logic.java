@@ -2,6 +2,7 @@ package model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -12,12 +13,13 @@ public class Logic {
 	
 	private PApplet app;
 	
+	SortName sortName;
+	SortAge sortAge;
+	SortRace sortRace;
+	
 	private String[] textOne;
 	private String[] textTwo;
 	private LinkedList<Dog> dog;
-	
-	//private String[] data1;
-	//private String[] data2;
 	
 	public Logic(PApplet app) {
 		
@@ -25,6 +27,10 @@ public class Logic {
 		textOne = app.loadStrings("../data/imports/datosUno.txt");
 		textTwo = app.loadStrings("../data/imports/datosDos.txt");
 		dog = new LinkedList<Dog>();
+		
+		sortName = new SortName();
+		sortAge = new SortAge();
+		sortRace = new SortRace();
 	
 		for (int i = 0; i < textOne.length; i++) {
 
@@ -63,8 +69,28 @@ public class Logic {
 		switch (key) {
 		case 'i':
 			
+			Collections.sort(dog);
 			break;
 
+		case 'n':
+			
+			Collections.sort(dog, sortName);
+			break;
+			
+		case 'e':
+			
+			Collections.sort(dog, sortAge);
+			break;
+		
+		case 'r':
+			
+			Collections.sort(dog, sortRace);
+			break;
+		
+		case 'f':
+			
+			Collections.sort(dog);
+			break;
 		default:
 			break;
 		}

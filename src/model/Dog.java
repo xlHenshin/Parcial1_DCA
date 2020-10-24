@@ -19,13 +19,13 @@ public class Dog implements Comparable<Dog> {
 		this.nacimiento=nacimiento;
 	}
 	
-	public void drawData(int x) {
+	public void drawData(int x, int y) {
 		
-		app.text("Id:" + id, x + 8, 125);
-		app.text("Name:" + nombre, x + 8, 125 + 19);
-		app.text("Age:" + edad, x + 8, 125 + 19 * 2);
-		app.text("Race:" + raza, x + 8, 125 + 19 * 3);
-		app.text("Date:" + nacimiento, x + 8, 125 + 19 * 4);
+		app.text("Id:" + id, x, y);
+		app.text("Nombre:" + nombre, x, y + 20);
+		app.text("Edad:" + edad, x, y + 40);
+		app.text("Raza:" + raza, x, y + 60);
+		app.text("F.Nacimiento:" + nacimiento, x, y + 80);
 
 	}
 
@@ -70,9 +70,9 @@ public class Dog implements Comparable<Dog> {
 	}
 
 	@Override
-	public int compareTo(Dog arg0) {
+	public int compareTo(Dog nextDog) {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.id-nextDog.getId();
 	}
 	
 	

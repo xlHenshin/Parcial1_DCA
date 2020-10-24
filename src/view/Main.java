@@ -13,7 +13,7 @@ public class Main extends PApplet {
 	}
 	
 	public void settings() {
-		size(1500, 580);
+		size(1820, 580);
 	}
 	
 	public void setup() {
@@ -28,8 +28,8 @@ public class Main extends PApplet {
 		
 		for (int i = 0; i < controller.dog().size(); i++) {
 
-			textSize(11.5f);
-			controller.dog().get(i).drawData(20+(140*i));
+			textSize(12);
+			controller.dog().get(i).drawData(23+(180*i),100);
 		}
 		
 	}
