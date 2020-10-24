@@ -59,6 +59,10 @@ public class Logic {
 					String raza = data2[1];
 					String nacimiento = data2[2];
 					
+					//Se da el formato de fecha que se necesita para luego guardarlo en el LinkedList.
+					//En la clase Dog se debe hacer lo mismo con la variable nacimiento, dandole el formato.
+					//De lo contrario, la fecha aparecerá con datos que no se necesitan.
+					
 					Date fecha = null;
 					try {
 						fecha = new SimpleDateFormat("dd-MM-yyyy").parse(nacimiento);
@@ -80,6 +84,8 @@ public class Logic {
 	public void sortList(char key) {
 		
 		switch (key) {
+		
+		//Ordenamiento (natural) por ID
 		case 'q':
 			
 			Collections.sort(dog);
@@ -90,6 +96,9 @@ public class Logic {
 				String nombre = dog.get(i).getNombre();
 				String edad = Integer.toString(dog.get(i).getEdad());
 				String raza = dog.get(i).getRaza();
+				
+				//Al igual que en el for de arriba, acá se debe hacer lo mismo con los formatos para poder tener
+				//un correcto resutado a la hora de guardar el arreglo en el txt.
 				
 				Date fecha = dog.get(i).getNacimiento();
 				SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -107,6 +116,7 @@ public class Logic {
 			
 			break;
 
+		//Ordenamiento por nombre
 		case 'w':
 			
 			Collections.sort(dog, sortName);
@@ -133,6 +143,7 @@ public class Logic {
 			}
 			break;
 			
+		//Ordenamiento por edad
 		case 'e':
 			
 			Collections.sort(dog, sortAge);
@@ -158,7 +169,8 @@ public class Logic {
 				app.saveStrings("OrganizadoPorEdad.txt", saveAge);
 			}
 			break;
-		
+			
+		//Ordenamiento por raza
 		case 'r':
 			
 			Collections.sort(dog, sortRace);
@@ -184,7 +196,8 @@ public class Logic {
 				app.saveStrings("OrganizadoPorRaza.txt", saveRace);
 			}
 			break;
-		
+			
+		//Ordenamiento por fecha de nacimiento
 		case 't':
 			
 			Collections.sort(dog, sortDate);

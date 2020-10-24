@@ -25,6 +25,10 @@ public class Dog implements Comparable<Dog> {
 		this.raza=raza;
 		this.nacimiento=nacimiento;
 		
+		//Como sucede en la clase Lógica, el formato se debe cambiar para poder verlo correctamente en el lienzo.
+		//Al principio tuve problemas con datos que se pintaban en la fecha y no necesitaba,
+		//pero al aplicar el formato con un string en nacimiento, todo se soluciona.
+		
 		SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 		fecha = formato.format(nacimiento);
 	}

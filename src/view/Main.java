@@ -31,7 +31,7 @@ public class Main extends PApplet {
 		for (int i = 0; i < controller.dog().size(); i++) {
 
 			textSize(13);
-			controller.dog().get(i).drawData(23+(185*i),300);
+			controller.dog().get(i).drawData(23+(185*i),300); //Traigo el metodo drawData(x,y) de la clase Dog, con el que pinto el texto.
 		}
 		
 	}
