@@ -1,5 +1,10 @@
 package model;
 
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import processing.core.PApplet;
 
 public class Dog implements Comparable<Dog> {
@@ -7,9 +12,10 @@ public class Dog implements Comparable<Dog> {
 	private PApplet app;
 	
 	private int id, edad;
-	private String nombre, raza, nacimiento;
+	private String nombre, raza;
+	private Date nacimiento;
 	
-	public Dog(int id, String nombre, int edad, String raza, String nacimiento, PApplet app) {
+	public Dog(PApplet app, int id, String nombre, int edad, String raza, Date nacimiento) {
 		
 		this.app=app;
 		this.id=id;
@@ -21,11 +27,14 @@ public class Dog implements Comparable<Dog> {
 	
 	public void drawData(int x, int y) {
 		
+		SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+		String fecha = formato.format(nacimiento);
+		
 		app.text("Id:" + id, x, y);
 		app.text("Nombre:" + nombre, x, y + 20);
 		app.text("Edad:" + edad, x, y + 40);
 		app.text("Raza:" + raza, x, y + 60);
-		app.text("F.Nacimiento:" + nacimiento, x, y + 80);
+		app.text("F.Nacimiento:" + fecha, x, y + 80);
 
 	}
 
@@ -61,11 +70,11 @@ public class Dog implements Comparable<Dog> {
 		this.raza = raza;
 	}
 
-	public String getNacimiento() {
+	public Date getNacimiento() {
 		return nacimiento;
 	}
 
-	public void setNacimiento(String nacimiento) {
+	public void setNacimiento(Date nacimiento) {
 		this.nacimiento = nacimiento;
 	}
 

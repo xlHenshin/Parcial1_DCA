@@ -16,6 +16,7 @@ public class Logic {
 	SortName sortName;
 	SortAge sortAge;
 	SortRace sortRace;
+	SortDate sortDate;
 	
 	private String[] textOne;
 	private String[] textTwo;
@@ -31,11 +32,9 @@ public class Logic {
 		sortName = new SortName();
 		sortAge = new SortAge();
 		sortRace = new SortRace();
+		sortDate = new SortDate();
 	
 		for (int i = 0; i < textOne.length; i++) {
-
-			String line = textOne[i];
-			System.out.println(line);
 			
 			String[] data1 = textOne[i].split(",");
 			
@@ -45,17 +44,23 @@ public class Logic {
 
 			for (int j = 0; j < textTwo.length; j++) {
 
-				String line2 = textTwo[i];
-				System.out.println(line2);
-				
 				String[] data2 = textTwo[j].split(",");
 
 				if (id == Integer.parseInt(data2[0])) {
 					
 					String raza = data2[1];
 					String nacimiento = data2[2];
+					
+					Date fecha = null;
+					try {
+						fecha = new SimpleDateFormat("dd-MM-yyyy").parse(nacimiento);
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			
 
-					dog.add(new Dog(id, nombre, edad, raza, nacimiento, app));
+					dog.add(new Dog(app, id, nombre, edad, raza, fecha));
 				}
 			}
 
@@ -89,7 +94,7 @@ public class Logic {
 		
 		case 'f':
 			
-			Collections.sort(dog);
+			Collections.sort(dog, sortDate);
 			break;
 		default:
 			break;
